@@ -16,6 +16,7 @@
 		E946F0B42909D60400D1C759 /* WorkSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E946F0B32909D60400D1C759 /* WorkSans-Regular.otf */; };
 		E946F0B62909D67F00D1C759 /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946F0B52909D67F00D1C759 /* ResultLabel.swift */; };
 		E946F0B82909D69100D1C759 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946F0B72909D69100D1C759 /* RoundButton.swift */; };
+		E946F0BB2909E66100D1C759 /* LogicOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946F0BA2909E66100D1C759 /* LogicOperations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E946F0B32909D60400D1C759 /* WorkSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.otf"; sourceTree = "<group>"; };
 		E946F0B52909D67F00D1C759 /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
 		E946F0B72909D69100D1C759 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		E946F0BA2909E66100D1C759 /* LogicOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,6 @@
 		E90A440E2909D262000B20FF = {
 			isa = PBXGroup;
 			children = (
-				E946F0B22909D5FA00D1C759 /* Fonts */,
 				E90A44192909D263000B20FF /* Calculator */,
 				E90A44182909D263000B20FF /* Products */,
 				6443CA3FA6F77517B5CD024F /* Pods */,
@@ -85,6 +86,8 @@
 		E90A44192909D263000B20FF /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				E946F0B92909E65100D1C759 /* Logic */,
+				E946F0B22909D5FA00D1C759 /* Fonts */,
 				E90A442E2909D31B000B20FF /* Applications */,
 				E90A442F2909D32D000B20FF /* ViewController */,
 				E90A44302909D390000B20FF /* SupportingFiles */,
@@ -127,6 +130,14 @@
 				E946F0B32909D60400D1C759 /* WorkSans-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E946F0B92909E65100D1C759 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E946F0BA2909E66100D1C759 /* LogicOperations.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E946F0BB2909E66100D1C759 /* LogicOperations.swift in Sources */,
 				E90A441F2909D263000B20FF /* ViewController.swift in Sources */,
 				E946F0B82909D69100D1C759 /* RoundButton.swift in Sources */,
 				E90A441B2909D263000B20FF /* AppDelegate.swift in Sources */,
