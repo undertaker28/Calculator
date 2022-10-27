@@ -158,6 +158,11 @@ class ViewController: UIViewController {
     
     @objc func pressOperator(_ sender: UIButton) {
         guard let buttonTitle = sender.titleLabel?.text else { return }
+        
+        // MARK: - For negative numbers
+        if buttonTitle == "-" {
+            typing = true
+        }
         let needCalculation = typing
         if typing, let value = displayValue {
             logic.setOperand(operand: value)
