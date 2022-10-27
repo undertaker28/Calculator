@@ -108,11 +108,12 @@ class ViewController: UIViewController {
     func addButtonsToArray() {
         for element in 0..<digitsAndSymbols.count {
             let button = RoundButton()
-            button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: 36)
+            button.titleLabel?.font = UIFont(name: "WorkSans-Regular", size: 40)
             switch digitsAndSymbols[element] {
             case "C", "%", "⁺∕₋":
                 button.backgroundColor = colorsArray[0]
                 button.setTitle(digitsAndSymbols[element], for: .normal)
+                button.setTitleColor(UIColor(named: "TextColor"), for: .normal)
                 button.layer.borderWidth = 1
                 button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 if digitsAndSymbols[element] == "C" {
@@ -123,12 +124,14 @@ class ViewController: UIViewController {
             case "÷", "×", "-", "+", "=":
                 button.backgroundColor = colorsArray[1]
                 button.setTitle(digitsAndSymbols[element], for: .normal)
+                button.setTitleColor(UIColor.white, for: .normal)
                 button.addTarget(self, action: #selector(self.pressOperator(_:)), for: .touchUpInside)
             default:
                 button.layer.borderWidth = 1
                 button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 button.backgroundColor = colorsArray[2]
                 button.setTitle(digitsAndSymbols[element], for: .normal)
+                button.setTitleColor(UIColor(named: "TextColor"), for: .normal)
                 button.addTarget(self, action: #selector(self.pressNumber(_:)), for: .touchUpInside)
             }
             if button.titleLabel?.text == "0" {

@@ -17,9 +17,9 @@
 		E946F0B82909D69100D1C759 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946F0B72909D69100D1C759 /* RoundButton.swift */; };
 		E946F0BB2909E66100D1C759 /* LogicOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946F0BA2909E66100D1C759 /* LogicOperations.swift */; };
 		E9921F83290AA99500091264 /* Switches in Frameworks */ = {isa = PBXBuildFile; productRef = E9921F82290AA99500091264 /* Switches */; };
-		E9921F8B290AC29500091264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9921F8A290AC29500091264 /* Assets.xcassets */; };
 		E9921F8E290ACB2000091264 /* MTUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9921F8D290ACB2000091264 /* MTUserDefaults.swift */; };
 		E9921F92290ADCE300091264 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9921F91290ADCE300091264 /* Theme.swift */; };
+		E9921F98290AE4AA00091264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9921F97290AE4AA00091264 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +36,9 @@
 		E946F0B52909D67F00D1C759 /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
 		E946F0B72909D69100D1C759 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		E946F0BA2909E66100D1C759 /* LogicOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicOperations.swift; sourceTree = "<group>"; };
-		E9921F8A290AC29500091264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "New Group/Assets.xcassets"; sourceTree = "<group>"; };
 		E9921F8D290ACB2000091264 /* MTUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTUserDefaults.swift; sourceTree = "<group>"; };
 		E9921F91290ADCE300091264 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E9921F97290AE4AA00091264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 		E90A44302909D390000B20FF /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				E9921F8A290AC29500091264 /* Assets.xcassets */,
+				E9921F97290AE4AA00091264 /* Assets.xcassets */,
 				E90A44202909D263000B20FF /* Main.storyboard */,
 				E90A44282909D263000B20FF /* Info.plist */,
 			);
@@ -231,7 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90A44222909D263000B20FF /* Main.storyboard in Resources */,
-				E9921F8B290AC29500091264 /* Assets.xcassets in Resources */,
+				E9921F98290AE4AA00091264 /* Assets.xcassets in Resources */,
 				E946F0B42909D60400D1C759 /* WorkSans-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
