@@ -7,17 +7,19 @@
 
 import UIKit
 import SnapKit
+import Switches
 
 class ViewController: UIViewController {
     
     private lazy var digitsAndSymbols = ["C", "⁺∕₋", "%", "÷", "7", "8", "9", "×", "4", "5", "6", "-", "1", "2", "3", "+", "0", ",", "="]
-    private lazy var colorsArray: [UIColor] = [#colorLiteral(red: 0.3040827513, green: 0.3140518367, blue: 0.3736236691, alpha: 1), #colorLiteral(red: 0.295702666, green: 0.3668284416, blue: 0.988561213, alpha: 1), #colorLiteral(red: 0.1794961393, green: 0.1844775975, blue: 0.2185646594, alpha: 1)]
+    private lazy var colorsArray: [UIColor?] = [UIColor(named: "Operators"), UIColor(named: "SimpleOperators"), UIColor(named: "Numbers")]
     private lazy var stackOfStacks = UIStackView()
     private lazy var stackArray = [UIStackView]()
     private lazy var buttons = [RoundButton]()
     private lazy var resultLabel = Resultlabel()
     private lazy var typing = false
     private lazy var logic = LogicOperations()
+    private lazy var index = 1
     private lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -25,6 +27,21 @@ class ViewController: UIViewController {
         formatter.groupingSeparator = " "
         formatter.locale = Locale.current
         return formatter
+    }()
+    
+    private lazy var switchButton: YapModeSwitch! = {
+        let switchBtn = YapModeSwitch()
+        if MTUserDefaults.shared.theme.rawValue == 1 {
+            switchBtn.isOn = false
+        } else {
+            switchBtn.isOn = true
+        }
+        switchBtn.thumbRadiusPadding = 8
+        switchBtn.thumbTintColor = #colorLiteral(red: 0.295702666, green: 0.3668284416, blue: 0.988561213, alpha: 1)
+        switchBtn.offTintColor = .white
+        switchBtn.onTintColor = #colorLiteral(red: 0.1794961393, green: 0.1844775975, blue: 0.2185646594, alpha: 1)
+        switchBtn.addTarget(self, action: #selector(switchButtonToggle(_:)), for: .valueChanged)
+        return switchBtn
     }()
     
     var displayValue: Double? {
@@ -46,7 +63,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.09019548446, green: 0.09019654244, blue: 0.1115591601, alpha: 1)
+        view.backgroundColor = UIColor(named: "Background")
         stackOfStacks.backgroundColor = view.backgroundColor
         stackOfStacks.axis = .vertical
         stackOfStacks.alignment = .fill
@@ -55,6 +72,7 @@ class ViewController: UIViewController {
         formingStack()
         view.addSubview(resultLabel)
         view.addSubview(stackOfStacks)
+        view.addSubview(switchButton)
         makeConstraints()
     }
     
@@ -70,6 +88,12 @@ class ViewController: UIViewController {
             label.leading.equalToSuperview().offset(26)
             label.trailing.equalToSuperview().offset(-26)
             label.height.equalTo(70)
+        }
+        switchButton.snp.makeConstraints { toogle in
+            toogle.top.equalToSuperview().offset(90)
+            toogle.leading.equalToSuperview().offset(155)
+            toogle.trailing.equalToSuperview().offset(-155)
+            toogle.height.equalTo(40)
         }
     }
     
@@ -89,6 +113,8 @@ class ViewController: UIViewController {
             case "C", "%", "⁺∕₋":
                 button.backgroundColor = colorsArray[0]
                 button.setTitle(digitsAndSymbols[element], for: .normal)
+                button.layer.borderWidth = 1
+                button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 if digitsAndSymbols[element] == "C" {
                     button.addTarget(self, action: #selector(self.pressC(_:)), for: .touchUpInside)
                 } else {
@@ -99,6 +125,8 @@ class ViewController: UIViewController {
                 button.setTitle(digitsAndSymbols[element], for: .normal)
                 button.addTarget(self, action: #selector(self.pressOperator(_:)), for: .touchUpInside)
             default:
+                button.layer.borderWidth = 1
+                button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 button.backgroundColor = colorsArray[2]
                 button.setTitle(digitsAndSymbols[element], for: .normal)
                 button.addTarget(self, action: #selector(self.pressNumber(_:)), for: .touchUpInside)
@@ -138,6 +166,15 @@ class ViewController: UIViewController {
             default: stackArray[4].addArrangedSubview(buttons[index])
             }
         }
+    }
+    
+    @objc func switchButtonToggle(_ sender: YapDarkAndLightModeSwitch) {
+        index = 1
+        if switchButton.isOn {
+            index = 2
+        }
+        MTUserDefaults.shared.theme = Theme(rawValue: index) ?? .unspecified
+        view.window?.overrideUserInterfaceStyle = MTUserDefaults.shared.theme.getUserInterfaceStyle()
     }
     
     @objc func pressNumber(_ sender: UIButton) {

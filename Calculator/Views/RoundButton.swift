@@ -11,7 +11,6 @@ class RoundButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = 24
-        self.layer.borderWidth = 1
-        self.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.setTitleColor(UIColor(named: "TextColor"), for: .normal)
     }
 }

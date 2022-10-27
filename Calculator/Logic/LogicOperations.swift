@@ -8,7 +8,7 @@
 import Foundation
 
 class LogicOperations {
-
+    
     private lazy var accumulator = 0.0
     private lazy var previousAccumulator = 0.0
     private lazy var previousPriority = 20
@@ -17,7 +17,7 @@ class LogicOperations {
     var result: Double {
         return accumulator
     }
-
+    
     private enum Operation {
         case unaryOperation((Double) -> Double)
         case binaryOperation((Double, Double) -> Double, Int)
@@ -31,7 +31,7 @@ class LogicOperations {
         var function: ((Double, Double) -> Double)
         var firstOperand: Double
     }
-
+    
     private var operations: [String: Operation] = [
         "⁺∕₋": Operation.unaryOperation{ -$0 },
         "×": Operation.binaryOperation({ $0 * $1 }, 1),
@@ -42,7 +42,7 @@ class LogicOperations {
         "%": Operation.percentOperation({ $0 / 100 }, { $0 * $1 / 100 }),
         "C": Operation.clear
     ]
-
+    
     // MARK: - Setting initial value
     func setOperand(operand: Double) {
         accumulator = operand
