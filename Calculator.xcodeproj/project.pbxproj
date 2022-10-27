@@ -16,7 +16,6 @@
 		E946F0B62909D67F00D1C759 /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946F0B52909D67F00D1C759 /* ResultLabel.swift */; };
 		E946F0B82909D69100D1C759 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946F0B72909D69100D1C759 /* RoundButton.swift */; };
 		E946F0BB2909E66100D1C759 /* LogicOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946F0BA2909E66100D1C759 /* LogicOperations.swift */; };
-		E9921F83290AA99500091264 /* Switches in Frameworks */ = {isa = PBXBuildFile; productRef = E9921F82290AA99500091264 /* Switches */; };
 		E9921F8E290ACB2000091264 /* MTUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9921F8D290ACB2000091264 /* MTUserDefaults.swift */; };
 		E9921F92290ADCE300091264 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9921F91290ADCE300091264 /* Theme.swift */; };
 		E9921F98290AE4AA00091264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9921F97290AE4AA00091264 /* Assets.xcassets */; };
@@ -46,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9921F83290AA99500091264 /* Switches in Frameworks */,
 				BCF11212D8979DE8C63242FC /* Pods_Calculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,9 +180,6 @@
 			dependencies = (
 			);
 			name = Calculator;
-			packageProductDependencies = (
-				E9921F82290AA99500091264 /* Switches */,
-			);
 			productName = Calculator;
 			productReference = E90A44172909D263000B20FF /* Calculator.app */;
 			productType = "com.apple.product-type.application";
@@ -214,7 +209,6 @@
 			);
 			mainGroup = E90A440E2909D262000B20FF;
 			packageReferences = (
-				E9921F81290AA99500091264 /* XCRemoteSwiftPackageReference "Switch-Animations" */,
 			);
 			productRefGroup = E90A44182909D263000B20FF /* Products */;
 			projectDirPath = "";
@@ -504,25 +498,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E9921F81290AA99500091264 /* XCRemoteSwiftPackageReference "Switch-Animations" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jwd-ali/Switch-Animations.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E9921F82290AA99500091264 /* Switches */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E9921F81290AA99500091264 /* XCRemoteSwiftPackageReference "Switch-Animations" */;
-			productName = Switches;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E90A440F2909D262000B20FF /* Project object */;
 }

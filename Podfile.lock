@@ -1,16 +1,20 @@
 PODS:
   - SnapKit (5.6.0)
+  - Switches (3.0.0)
 
 DEPENDENCIES:
   - SnapKit
+  - Switches
 
 SPEC REPOS:
   trunk:
     - SnapKit
+    - Switches
 
 SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Switches: 6d54f7cafb1b7d7c405b19cf7b3de925742d0a55
 
-PODFILE CHECKSUM: 4dff4a2c1b28ae4709b0b36c1bf88bcb7613373e
+PODFILE CHECKSUM: da309470c0f3abc5a673e8db90a16360e51eebc8
 
 COCOAPODS: 1.8.4

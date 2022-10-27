@@ -7,5 +7,6 @@ target 'Calculator' do
 
   # Pods for Calculator
   pod 'SnapKit'
+  pod 'Switches'
 
 end
